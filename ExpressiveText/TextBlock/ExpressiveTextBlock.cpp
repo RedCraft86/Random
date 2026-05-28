@@ -27,7 +27,10 @@ FExpressiveText FExpressiveTextData::GetExpressiveText()
 	if (bUseAsset)
 	{
 		ensureAlwaysMsgf(!FApp::IsGame() || IsValid(TextAsset), TEXT("Cannot use TextAsset, it is nullptr!"));
-		Result.SetFields(TextAsset->Fields);
+		if (TextAsset)
+		{
+			Result.SetFields(TextAsset->Fields);
+		}
 	}
 	else
 	{
