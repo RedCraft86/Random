@@ -3,8 +3,8 @@
 # Implementing the Class
 ## Header/CPP files
 For simplicity, I will be adding these classes into the ExpressiveText source code itself.
-- Copy [ExpressiveTextBlock.h](RandomNotes/ExpressiveText/TextBlock/ExpressiveTextBlock.h) into `..PluginFolder../Source/ExpressiveText/Public/Widgets/`
-- Copy [ExpressiveTextBlock.cpp](RandomNotes/ExpressiveText/TextBlock/ExpressiveTextBlock.cpp) into `..PluginFolder../Source/ExpressiveText/Private/Widgets/`
+- Copy [ExpressiveTextBlock.h](ExpressiveTextBlock.h) into `..PluginFolder../Source/ExpressiveText/Public/Widgets/`
+- Copy [ExpressiveTextBlock.cpp](ExpressiveTextBlock.cpp) into `..PluginFolder../Source/ExpressiveText/Private/Widgets/`
 - Check for any issues and resolve them.
 
 ## [Optional] Class Icon
