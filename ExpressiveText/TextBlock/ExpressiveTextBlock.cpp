@@ -9,7 +9,7 @@ FExpressiveTextData::FExpressiveTextData(): bUseAsset(false)
 	TextFields.UseDefaultFontSize = true;
 	TextFields.WrapSettings.Value = 1.0f;
 	TextFields.WrapSettings.ValueType = EExpressiveTextWrapMode::WrapAtPercentageOfParentSize;
-	TextFields.DefaultStyle = LoadObject<UExpressiveTextStyle>(nullptr, DefaultStylePath);
+	TextFields.DefaultStyle = LoadObject<UExpressiveTextDefaultStyle>(nullptr, DefaultStylePath);
 }
 
 int64 FExpressiveTextData::CalcChecksum() const
@@ -26,8 +26,7 @@ FExpressiveText FExpressiveTextData::GetExpressiveText()
 	FExpressiveText Result;
 	if (bUseAsset)
 	{
-		ensureAlwaysMsgf(!FApp::IsGame() || IsValid(TextAsset), TEXT("Cannot use TextAsset, it is nullptr!"));
-		if (TextAsset)
+		if (ensureMsgf(IsValid(TextAsset), TEXT("Cannot use TextAsset, it is nullptr!")))
 		{
 			Result.SetFields(TextAsset->Fields);
 		}
@@ -38,7 +37,7 @@ FExpressiveText FExpressiveTextData::GetExpressiveText()
 		if (!Result.GetDefaultStyle())
 		{
 			// Recommended not to rely on this, explicitly set your style when possible
-			TextFields.DefaultStyle = LoadObject<UExpressiveTextStyle>(nullptr, DefaultStylePath);
+			TextFields.DefaultStyle = LoadObject<UExpressiveTextDefaultStyle>(nullptr, DefaultStylePath);
 			Result.SetDefaultStyle(TextFields.DefaultStyle);
 		}
 	}
