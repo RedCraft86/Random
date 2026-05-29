@@ -62,7 +62,7 @@
 ## Porting to 5.8 PREVIEW
 - **Apply all changes for 5.6 and 5.7 before starting**
 
-- `UnlogImplementation.h` - `Line 288`
+- `UnlogImplementation.h` - `Line 288`  
   and `ExpressiveTextEditorSubsystem.h` - `Line 79`
   - Change `OnPostEngineInit` to `GetOnPostEngineInit()`
 
