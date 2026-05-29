@@ -3,7 +3,7 @@
 # Prerequisites
 ## Locating the Expressive Text Plugin
 - If you **have Unreal Engine 5.5 installed**, you can download the Expresive Text plugin by installing it to the engine and locating the file at `UE_INSTALL_DIR/Engine/Plugins/Marketplace/(Plugin here with encrypted name)`
-- If you **do not have Unreal Engine 5.5 installed**, you can either download it (deselected everything in install options for a smaller size) and obtain the plugin via the above step, or use *Asset Manager Studio* to download it directly.
+- If you **do not have Unreal Engine 5.5 installed**, you can either download it (deselect everything in install options for a smaller size) and obtain the plugin via the above step, or use *Asset Manager Studio* to download it directly.
 
 ## Creating a C++ Project
 1) In your target Unreal Engine version (for example, 5.7) create a **C++ based project**.
