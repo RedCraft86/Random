@@ -1,15 +1,13 @@
 #include "Widgets/ExpressiveTextBlock.h"
 #include "Styles/ExpressiveTextStyle.h"
 
-#define DefaultStylePath TEXT("/ExpressiveText/Core/Internal/ExpressiveTextDefaultStyle.ExpressiveTextDefaultStyle")
-
 FExpressiveTextData::FExpressiveTextData(): bUseAsset(false)
 {
 	TextFields.DefaultFontSize = 24;
 	TextFields.UseDefaultFontSize = true;
 	TextFields.WrapSettings.Value = 1.0f;
 	TextFields.WrapSettings.ValueType = EExpressiveTextWrapMode::WrapAtPercentageOfParentSize;
-	TextFields.DefaultStyle = LoadObject<UExpressiveTextDefaultStyle>(nullptr, DefaultStylePath);
+	TextFields.DefaultStyle = GetDefault<UExpressiveTextSettings>()->DefaultStyleAsset.LoadSynchronous();
 }
 
 int64 FExpressiveTextData::CalcChecksum() const
@@ -37,7 +35,7 @@ FExpressiveText FExpressiveTextData::GetExpressiveText()
 		if (!Result.GetDefaultStyle())
 		{
 			// Recommended not to rely on this, explicitly set your style when possible
-			TextFields.DefaultStyle = LoadObject<UExpressiveTextDefaultStyle>(nullptr, DefaultStylePath);
+			TextFields.DefaultStyle = GetDefault<UExpressiveTextSettings>()->DefaultStyleAsset.LoadSynchronous();
 			Result.SetDefaultStyle(TextFields.DefaultStyle);
 		}
 	}
