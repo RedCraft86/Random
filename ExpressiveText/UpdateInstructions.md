@@ -59,7 +59,7 @@
   - Change `CompositeFont` **on the right** to `GetInternalCompositeFont()`
   - Change `CompositeFont` **on the left** to `GetMutableInternalCompositeFont()`
 
-## Porting to 5.8 PREVIEW
+## Porting to 5.8
 - **Apply all changes for 5.6 and 5.7 before starting**
 
 - `UnlogImplementation.h` - `Line 288`  
@@ -71,6 +71,11 @@
 
 - `ExTextMultiLineEditableText.h` - `Line 23, 37, 41, 42`
   - Change `EditableTextLayout->` to `SlateEditableTextLayout.` (**Important: Arrow becomes period!**)
+
+- `HTTP.h` and `RemoteLogSink.h` (Oh boy, this one is annoying)
+  - Use the regex `\bSet\w+Field\b` to search for all `Set[...]Field` function calls
+  - If the first parameter is a raw `"..."` make sure to wrap it in `TEXT()` to become `TEXT("...")`  
+    Example 1: `"appId"` -> `TEXT("appId")` | Example 2: `"events"` -> `TEXT("events")`
 
 # Final Steps
 ## If you are using it in a C++ project
