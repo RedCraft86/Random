@@ -75,7 +75,8 @@
 - `HTTP.h` and `RemoteLogSink.h` (Oh boy, this one is annoying)
   - Use the regex `\bSet\w+Field\b` to search for all `Set[...]Field` function calls
   - If the first parameter is a raw `"..."` make sure to wrap it in `TEXT()` to become `TEXT("...")`  
-    Example 1: `"appId"` -> `TEXT("appId")` | Example 2: `"events"` -> `TEXT("events")`
+    Example 1: `"appId"` -> `TEXT("appId")` | Example 2: `"events"` -> `TEXT("events")`  
+    (If it is already wrapped, no change is needed)
 
 # Final Steps
 ## If you are using it in a C++ project
