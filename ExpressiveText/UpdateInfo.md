@@ -16,7 +16,7 @@
 - In the same file, remove the `Installed` entry as well.
 
 ## Porting to 5.6
-- In `ExpressiveTextLayout.h` - `Line 56`
+- In `ExpressiveTextLayout.h` - `Line 406`
   - Change `OffsetX` to `Offset`
     
 - In `ExpressiveTextCompiler.h` - `Line 107`
@@ -63,7 +63,7 @@
 - **Apply all changes for 5.6 and 5.7 before starting**
 
 - `UnlogImplementation.h` - `Line 288`  
-  and `ExpressiveTextEditorSubsystem.h` - `Line 79`
+  and `ExpressiveTextEditorSubsystem.cpp` - `Line 83`
   - Change `OnPostEngineInit` to `GetOnPostEngineInit()`
 
 - `ExTextComboBox.h` - `Line 9`
