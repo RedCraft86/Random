@@ -163,9 +163,7 @@
                 }
             });
             container.appendChild(fixBtn);
-        }
 
-        if (pos && pos > minScrollSave) {
             const loadBtn = document.createElement("button");
             loadBtn.innerText = `🖲️ Load Scroll (${pos}px)`;
             loadBtn.style = baseBtnStyle;
