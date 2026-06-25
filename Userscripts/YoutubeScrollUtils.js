@@ -115,6 +115,7 @@
     }
 
     function injectUI(pos) {
+        if (!window.location.pathname.includes('/videos')) return;
         const existingContainer = document.getElementById('yt-scroll-ui-container');
         if (existingContainer) {
             existingContainer.style.display = 'flex';
@@ -148,22 +149,22 @@
             transition: transform 0.1s ease !important;
         `;
 
-        // The Updated "Fix Loop" Button
-        if (pos && pos > minScrollSave) {
-            const fixBtn = document.createElement("button");
-            fixBtn.innerText = `⬆️ Fix Scroll Loop`;
-            fixBtn.style = baseBtnStyle;
-            fixBtn.onmouseover = () => { fixBtn.style.transform = 'scale(1.05)'; }
-            fixBtn.onmouseout = () => { fixBtn.style.transform = 'scale(1)'; }
-            fixBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                if (!isScrolling) {
-                    bumpBack();
-                }
-            });
-            container.appendChild(fixBtn);
 
+        const fixBtn = document.createElement("button");
+        fixBtn.innerText = `⬆️ Fix Scroll Loop`;
+        fixBtn.style = baseBtnStyle;
+        fixBtn.onmouseover = () => { fixBtn.style.transform = 'scale(1.05)'; }
+        fixBtn.onmouseout = () => { fixBtn.style.transform = 'scale(1)'; }
+        fixBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+            if (!isScrolling) {
+                bumpBack();
+            }
+        });
+        container.appendChild(fixBtn);
+
+        if (pos && pos > minScrollSave) {
             const loadBtn = document.createElement("button");
             loadBtn.innerText = `🖲️ Load Scroll (${pos}px)`;
             loadBtn.style = baseBtnStyle;
