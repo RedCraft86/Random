@@ -149,19 +149,21 @@
         `;
 
         // The Updated "Fix Loop" Button
-        const fixBtn = document.createElement("button");
-        fixBtn.innerText = `⬆️ Fix Scroll Loop`;
-        fixBtn.style = baseBtnStyle;
-        fixBtn.onmouseover = () => { fixBtn.style.transform = 'scale(1.05)'; }
-        fixBtn.onmouseout = () => { fixBtn.style.transform = 'scale(1)'; }
-        fixBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            if (!isScrolling) {
-                bumpBack();
-            }
-        });
-        container.appendChild(fixBtn);
+        if (pos && pos > minScrollSave) {
+            const fixBtn = document.createElement("button");
+            fixBtn.innerText = `⬆️ Fix Scroll Loop`;
+            fixBtn.style = baseBtnStyle;
+            fixBtn.onmouseover = () => { fixBtn.style.transform = 'scale(1.05)'; }
+            fixBtn.onmouseout = () => { fixBtn.style.transform = 'scale(1)'; }
+            fixBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (!isScrolling) {
+                    bumpBack();
+                }
+            });
+            container.appendChild(fixBtn);
+        }
 
         if (pos && pos > minScrollSave) {
             const loadBtn = document.createElement("button");
