@@ -78,6 +78,15 @@
     Example 1: `"appId"` -> `TEXT("appId")` | Example 2: `"events"` -> `TEXT("events")`  
     (If it is already wrapped, no change is needed)
 
+**The following is to fix the ExpressiveTextActor flickering** (thanks @\_stumpchunkman\_ on discord)
+- `ExpressiveTextComponent.h` - `Line 177`  
+  - Add a third parameter to the NewObject function and provide `RF_Transient | RF_DuplicateTransient`  
+    `...(this, *ObjectName);` -> `...(this, *ObjectName, RF_Transient | RF_DuplicateTransient);`
+
+- `ExpressiveTextComponent.h` - `Line 212`  
+  - Add a second parameter to the UPROPERTY macro and provide `DuplicateTransient`  
+    `UPROPERTY( Transient )` -> `UPROPERTY( Transient, DuplicateTransient )`
+
 # Final Steps
 ## If you are using it in a C++ project
 Technically, you are done. You can move the plugins folder into your project and your project will compile the plugin approprately.
