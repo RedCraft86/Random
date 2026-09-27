@@ -71,6 +71,10 @@
 
 - **Netlimiter**: A program used to throttle your internet speed, letting you enter eviction areas for up to 10 seconds before the game times you out.
 
+- **Endfield Model Importer (EFMI)**: A program that visually alters the game without directly modifying any gameplay related numerical values or sending unauthorized requests to the HG servers. As changes are purely visuals, it does not constitute as cheating and HG has been rather tolerant of it. Unless you annoy them using this program, it is unlikely to lead to a ban. *(This program is mostly used for skin mods or my zipmaxxing utility mod "RCEFShaders")*
+
+- **XXMI**: A launcher program used to install and use EFMI.
+
 - **Pergola**: The outdoor seating areas you see around in Wuling. I'm not sure about other servers but we in NA/EU & ASIA try to put zips on all of them whenever they're feasible and placeable. *(Sometimes, this is interchangeably used for the huts on top of the Wuling wall, so read the context!)*
 
 - **"Landscape"**: A technical term referring to the heightmap based terrain that is used in some parts of the map. Sometimes, this terrain exist below mesh based terrain. A clear indicator of a Landscape is if you go out of bounds and the floor goes in weird spikey patterns or very smooth rolling hills vibe. *(Zips can let you go through pieces of Landscapes)*
